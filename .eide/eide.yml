@@ -1,0 +1,190 @@
+version: "4.1"
+name: zhengtortos
+type: ARM
+deviceName: GD32F303VG
+packDir: .pack/GigaDevice/GD32F30x_DFP.2.5.0
+srcDirs:
+  - Doc
+  - Hardware
+  - User
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: App
+      files: []
+      folders: []
+    - name: CMSIS
+      files:
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/CMSIS/GD/GD32F30x/Source/system_gd32f30x.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/CMSIS/GD/GD32F30x/Source/ARM/startup_gd32f30x_xd.s
+      folders: []
+    - name: Firmware
+      files:
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_rcu.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_adc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_bkp.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_can.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_crc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_ctc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_dac.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_dbg.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_dma.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_enet.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_exmc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_exti.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_fmc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_fwdgt.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_gpio.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_i2c.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_misc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_pmu.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_rtc.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_sdio.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_spi.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_timer.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_usart.c
+        - path: ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Source/gd32f30x_wwdgt.c
+      folders: []
+    - name: FreeRTOS_Src
+      files:
+        - path: freeRTOS/src/croutine.c
+        - path: freeRTOS/src/event_groups.c
+        - path: freeRTOS/src/list.c
+        - path: freeRTOS/src/queue.c
+        - path: freeRTOS/src/tasks.c
+        - path: freeRTOS/src/timers.c
+      folders: []
+    - name: FreeRTOS_Port
+      files:
+        - path: freeRTOS/port/GCC/ARM_CM4F/port.c
+        - path: freeRTOS/port/MemMang/heap_4.c
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: b7a2d0414baa5156b61da41b5ed5f93a
+targets:
+  Debug:
+    cppPreprocessAttrs:
+      defineList:
+        - GD32F30X_XD
+      incList:
+        - .
+        - ../GD32F30x_Firmware_Library_V3.0.3/Firmware/CMSIS/GD/GD32F30x/Include
+        - ../GD32F30x_Firmware_Library_V3.0.3/Firmware/CMSIS
+        - ../GD32F30x_Firmware_Library_V3.0.3/Firmware/GD32F30x_standard_peripheral/Include
+        - User
+        - freeRTOS/inc
+        - freeRTOS/port/GCC/ARM_CM4F
+        - freeRTOS/port/GCC
+      libList: []
+    excludeList:
+      - <virtual_root>/CMSIS/startup_gd32f30x_hd.s
+      - <virtual_root>/App/motor_pin.c
+      - <virtual_root>/FreeRTOS_CORE/stream_buffer.c
+    settings:
+      debugger: cortex-debug
+    toolchain: AC6
+    toolchainConfigMap:
+      AC6:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: single
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler:
+            $use: asm-auto
+            misc-controls: ""
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            language-c: c99
+            language-cpp: c++11
+            link-time-optimization: false
+            optimization: level-0
+          global:
+            output-debug-info: enable
+            use-microLIB: false
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            misc-controls: --diag_suppress=L6329
+            output-format: elf
+        scatterFilePath: <YOUR_SCATTER_FILE>.sct
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x018000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x0100000"
+                startAddr: "0x08000000"
+              tag: IROM
+        useCustomScatterFile: false
+      GCC:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: none
+        options:
+          version: 5
+          afterBuildTasks: []
+          asm-compiler:
+            ASM_FLAGS: ""
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: ""
+            C_FLAGS: ""
+            language-c: c11
+            language-cpp: c++11
+            one-elf-section-per-data: true
+            one-elf-section-per-function: true
+            optimization: level-debug
+            warnings: all-warnings
+          global:
+            $float-abi-type: hard
+            misc-control: ""
+            not-use-syscalls: true
+            output-debug-info: enable
+            use-newlib-nano: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            LD_FLAGS: ""
+            LIB_FLAGS: -lm
+            output-format: elf
+            remove-unused-input-sections: true
+        scatterFilePath: <YOUR_LINKER_SCRIPT>.lds
+        storageLayout:
+          RAM: []
+          ROM: []
+        useCustomScatterFile: true
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: D:\GD32f303vg\zhengto\build\Debug\zhengto.hex
+        cpuInfo:
+          cpuName: GD32F303VGT6
+          vendor: GigaDevice
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      STLink:
+        address: "0x08000000"
+        bin: ""
+        elFile: None
+        optionBytes: .eide/debug.st.option.bytes.ini
+        otherCmds: ""
+        proType: SWD
+        resetMode: default
+        runAfterProgram: true
+        speed: 4000
+    uploader: STLink
